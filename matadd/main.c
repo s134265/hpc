@@ -15,6 +15,7 @@ main(int argc, char *argv[]) {
 
     int    i,j,l, m=3, n=2, k=5, N = NREPEAT;
     double **A, **B, **C, **D;
+    double alf=1.0,bet=0.0;
     //double *b,*c;
     double tcpu1,tcpu2; 
 
@@ -49,14 +50,16 @@ main(int argc, char *argv[]) {
 	t2 = mytimer();
 	t3 = mytimer();
 
-	cblas_dgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,m,n,k,1,A,k,B,n,0,D,n);
+	cblas_dgemm(CblasRowMajor,CblasNoTrans,CblasNoTrans,m,n,k,alf,*A,k,*B,n,bet,*D,n);
 	t4 = mytimer();
 	tcpu1 = delta_t(t1, t2);
 	tcpu2 = delta_t(t3, t4);
-	//for (l = 0; l<m; l++)
-		//for (j=0; j<n; j++)
-			//printf("%8.3f\n", C[l][j]);
-
+	for (l = 0; l<m; l++)
+		for (j=0; j<n; j++)
+			printf("%8.3f\n", C[l][j]);
+	for (l = 0; l<m; l++)
+		for (j=0; j<n; j++)
+			printf("%8.3f\n", D[l][j]);
 	//check_results("main", m, n, C);
 
 	/* Print n and results  */
@@ -66,6 +69,7 @@ main(int argc, char *argv[]) {
 	free_2d(A);
 	free_2d(B);
 	free_2d(C);
+	free_2d(D);
 	//free(b);
 	//free(c);
     //}
