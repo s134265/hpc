@@ -1,5 +1,5 @@
 #include "data.h"
-#include "math.h"
+
 
 #ifdef ARRAY_OF_STRUCTS
 double 
