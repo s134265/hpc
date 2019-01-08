@@ -25,7 +25,7 @@ distance(particle_t p, int n) {
         p.dist[i]=p.x[i]*p.x[i]+p.y[i]*p.y[i]+p.z[i]*p.z[i];
     }
     for(i=0;i<n;i++){
-        p[i].dist= sqrt(p.dist[i]);
+        p.dist[i]= sqrt(p.dist[i]);
         dist += p.dist[i];
     }
     return dist;
