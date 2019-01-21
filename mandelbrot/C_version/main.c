@@ -3,7 +3,7 @@
 #include "mandel.h"
 #include "writepng.h"
 
-
+#include <omp.h>
 
 int
 main(int argc, char *argv[]) {
@@ -24,10 +24,14 @@ main(int argc, char *argv[]) {
        fprintf(stderr, "memory allocation failed!\n");
        return(1);
     }
-
+    double start = omp_get_wtime();
+    #pragma omp parallel
+    {
     mandel(width, height, image, max_iter);
-
-    writepng("mandelbrot.png", image, width, height);
+    }
+    double end = omp_get_wtime() - start;
+    printf("Wall time: %lf",end);
+    //writepng("mandelbrot.png", image, width, height);
 
     return(0);
 }

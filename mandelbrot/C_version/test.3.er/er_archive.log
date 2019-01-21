@@ -1,0 +1,18 @@
+### Start Tue Jan 15 11:49:04 2019
+# /opt/oracle/developerstudio12.6/bin/../bin/er_archive -n -O /zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/er_archive.log /zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er
+Copying `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/mandelbrot'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/mandelbrot_naA_L3i_OK9'
+Copying `/usr/lib64/libz.so.1.2.7'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libz.so.1.2.7_OCEC1bthLm2'
+Copying `/usr/lib64/librt-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/librt-2.17.so_OCEC1bthLm2'
+Copying `/usr/lib64/libdl-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libdl-2.17.so_OCEC1bthLm2'
+Copying `/opt/oracle/developerstudio12.6/lib/compilers/rtlibs/usr/lib/amd64/libmtsk_crt.so.1'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libmtsk_crt.so.1_cGydg-gVPAc'
+Copying `/usr/lib64/libc-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libc-2.17.so_OCEC1bthLm2'
+Copying `/usr/lib64/libm-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libm-2.17.so_OCEC1bthLm2'
+Copying `/usr/lib64/libpthread-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libpthread-2.17.so_OCEC1bthLm2'
+Copying `/opt/oracle/developerstudio12.6/lib/compilers/rtlibs/usr/lib/amd64/libmtsk.so.1'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libmtsk.so.1_cGydg-gVPAc'
+Copying `/opt/oracle/developerstudio12.6/lib/compilers/atomic/amd64/libstatomic.so.1'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libstatomic.so.1_7qzdIqf-8R5'
+Copying `/appl/gcc/8.2.0/lib64/libgcc_s.so.1'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libgcc_s.so.1_v7o48cVJBr5'
+Copying `/opt/oracle/developerstudio12.6/lib/amd64/libtha.so.1'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libtha.so.1_H4JvMpbRDd4'
+Copying `/appl/gcc/8.2.0/lib64/libstdc++.so.6.0.25'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libstdc++.so.6.0.25_v7o48cVJBr5'
+Copying `/usr/lib64/libpng15.so.15.13.0'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libpng15.so.15.13.0_OCEC1bthLm2'
+Copying `/opt/oracle/developerstudio12.6/lib/analyzer/amd64/runtime/libcollector.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/libcollector.so_-C8vWEvanQd'
+Copying `/usr/lib64/ld-2.17.so'  to `/zhome/5f/1/88242/Desktop/hpc_personal/mandelbrot/C_version/test.3.er/archives/ld-2.17.so_OCEC1bthLm2'
