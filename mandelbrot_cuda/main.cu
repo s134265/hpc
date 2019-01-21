@@ -19,9 +19,7 @@ main(int argc, char *argv[]) {
     height   = 2601;
     max_iter = 400;
 
-    // command line argument sets the dimensions of the image
-    int N = atoi(argv[1]);
-    dim3 dimGrid(width/16,height/16,1);
+    dim3 dimGrid(width/16+1,height/16+1,1);
     dim3 dimBlock(16,16,1);
     
     

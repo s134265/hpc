@@ -7,6 +7,9 @@ __global__ void mandelgpu(int disp_width, int disp_height, int *array, int max_i
 
     i = blockIdx.x*blockDim.x + threadIdx.x;
     j = blockIdx.y*blockDim.y + threadIdx.y;
+    if (i>disp_width || j > disp_height) {
+	return;
+    }
 
     scale_real = 3.5 / (double)disp_width;
     scale_imag = 3.5 / (double)disp_height;
