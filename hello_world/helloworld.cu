@@ -2,12 +2,14 @@
 #include <helper_cuda.h>
 
 __global__ void printgpu(){
-  printf("Hello world! I’m thread %d out of 64 in block %d. My global thread id is %d out of 256.\n", threadIdx.x, blockIdx.x, blockIdx.x*blockDim.x+threadIdx.x);
+  printf("Hello world! I’m thread %d out of %d in block %d. My global thread id is %d out of %d.\n", threadIdx.x+1, blockDim.x ,blockIdx.x, blockIdx.x*blockDim.x+threadIdx.x+1,gridDim.x*blockDim.x);
 }
 
 
 int main(int argc, char *argv[])
 {
-  printgpu<<<4,64>>>();
+  int blockSize = atoi(argv[1]);
+  int blocks = atoi(argv[2]);
+  printgpu<<<blocs,blockSize>>>();
   cudaDeviceSynchronize();
 }
