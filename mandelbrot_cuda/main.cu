@@ -20,7 +20,7 @@ main(int argc, char *argv[]) {
     max_iter = 400;
 
     // command line argument sets the dimensions of the image
-    if ( argc == 2 ) width = height = atoi(argv[1]);
+    int N = atoi(argv[1]);
     
     
     
@@ -39,7 +39,7 @@ main(int argc, char *argv[]) {
     double start = omp_get_wtime();
     h_image = (int *)malloc( width * height * sizeof(int));
     cudaMalloc((void**)&d_image,width * height * sizeof(int));
-    mandelgpu<<<1,1>>>(width, height, d_image, max_iter);
+    mandelgpu<<<width*height/N,N>>>(width, height, d_image, max_iter);
     cudaDeviceSynchronize();
     cudaMemcpy(h_image,d_image,width * height * sizeof(int),cudaMemcpyDeviceToHost);
     

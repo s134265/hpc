@@ -5,14 +5,15 @@ __global__ void mandelgpu(int disp_width, int disp_height, int *array, int max_i
     double 	x, y, u, v, u2, v2;
     int 	i, j, iter;
 
+    i = blockIdx.x*blockDim.x;
+    j = threadIdx;
+
     scale_real = 3.5 / (double)disp_width;
     scale_imag = 3.5 / (double)disp_height;
 
-    for(i = 0; i < disp_width; i++) {
 
 	x = ((double)i * scale_real) - 2.25; 
 
-	for(j = 0; j < disp_height; j++) {
 	    y = ((double)j * scale_imag) - 1.75; 
 
 	    u    = 0.0;
@@ -32,7 +33,6 @@ __global__ void mandelgpu(int disp_width, int disp_height, int *array, int max_i
 	    // if we exceed max_iter, reset to zero
 	    iter = iter == max_iter ? 0 : iter;
 
-	    array[i*disp_height + j] = iter;
-	}
-    }
+	    array[i + j] = iter;
+
 }
