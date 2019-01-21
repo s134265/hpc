@@ -36,17 +36,18 @@ main(int argc, char *argv[]) {
     double end = omp_get_wtime() - start;
     printf("Wall time cpu: %lf",end);
     */
-    double start = omp_get_wtime();
+    
     h_image = (int *)malloc( width * height * sizeof(int));
     cudaMalloc((void**)&d_image,width * height * sizeof(int));
+    double start = omp_get_wtime();
     mandelgpu<<<width*height/N,N>>>(width, height, d_image, max_iter);
     cudaDeviceSynchronize();
     cudaMemcpy(h_image,d_image,width * height * sizeof(int),cudaMemcpyDeviceToHost);
-    
+    double end = omp_get_wtime() - start;
     writepng("mandelbrot.png", h_image, width, height);
     cudaFree(d_image);
     free(h_image);
-    double end = omp_get_wtime() - start;
+    
     printf("Wall time gpu: %lf",end);
     //
 
