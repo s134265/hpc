@@ -1,11 +1,11 @@
 SRCS	= main.c datatools.c matadd.c
 OBJS	= $(SRCS:.c=.o)
-TARGET	= madd.$(CC)
+TARGET	= madd.suncc
 
-CC	= gcc
+CC	= suncc
 INCS	= 
 DBG	= -g
-OPT	= -O3
+OPT	= -fast -xrestrict -xautopar -xreduction -xloopinfo
 PARA	= 
 CFLAGS	= $(DBG) $(OPT) $(PARA) $(XOPTS)
 
