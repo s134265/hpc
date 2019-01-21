@@ -14,5 +14,5 @@ int main(int argc, char *argv[])
   int blockSize = atoi(argv[1]);
   int blocks = atoi(argv[2]);
   printgpu<<<blocks,blockSize>>>();
-  cudaDeviceSynchronize();
+  checkCudaErrors(cudaDeviceSynchronize());
 }
