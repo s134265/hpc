@@ -9,4 +9,5 @@ __global__ void printgpu(){
 int main(int argc, char *argv[])
 {
   printgpu<<<4,64>>>();
+  cudaDeviceSynchronize();
 }
