@@ -36,7 +36,7 @@ main(int argc, char *argv[]) {
 
     start = omp_get_wtime();
     h_image = (int *)malloc( width * height * sizeof(int));
-    cudaMalloc((void**)&d_image,width * height * sizeof(int))
+    cudaMalloc((void**)&d_image,width * height * sizeof(int));
     mandelgpu<<<1,1>>>(width, height, d_image, max_iter);
     cudaDeviceSynchronize();
     cudaMemcpy(h_image,d_image,width * height * sizeof(int),cudaMemcpyDeviceToHost);
