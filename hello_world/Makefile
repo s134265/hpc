@@ -1,5 +1,5 @@
 TARGET = helloworld
-SRCS	 = 
+SRCS	 = helloworld.cu
 OBJS	 = helloworld.o
 
 OPT	= -g
