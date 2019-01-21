@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
+#include <helper_cuda.h>
 #include "mandel.h"
 #include "writepng.h"
 #include "mandelgpu.h"
-#include <omp.h>
-#include <helper_cuda.h>
+
 
 int
 main(int argc, char *argv[]) {
