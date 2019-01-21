@@ -1,5 +1,5 @@
-void
-mandel(int disp_width, int disp_height, int *array, int max_iter) {
+__global__ void
+mandelgpu(int disp_width, int disp_height, int *array, int max_iter) {
 
     double 	scale_real, scale_imag;
     double 	x, y, u, v, u2, v2;
@@ -11,7 +11,7 @@ mandel(int disp_width, int disp_height, int *array, int max_iter) {
     for(i = 0; i < disp_width; i++) {
 
 	x = ((double)i * scale_real) - 2.25; 
-	#pragma omp for schedule(dynamic, 36)
+
 	for(j = 0; j < disp_height; j++) {
 	    y = ((double)j * scale_imag) - 1.75; 
 
@@ -35,5 +35,4 @@ mandel(int disp_width, int disp_height, int *array, int max_iter) {
 	    array[i*disp_height + j] = iter;
 	}
     }
-
 }
