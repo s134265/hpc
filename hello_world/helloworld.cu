@@ -10,6 +10,6 @@ int main(int argc, char *argv[])
 {
   int blockSize = atoi(argv[1]);
   int blocks = atoi(argv[2]);
-  printgpu<<<blocs,blockSize>>>();
+  printgpu<<<blocks,blockSize>>>();
   cudaDeviceSynchronize();
 }
