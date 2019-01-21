@@ -1,5 +1,5 @@
-__global__ void
-mandelgpu(int disp_width, int disp_height, int *array, int max_iter) {
+#include "mandelgpu.h"
+__global__ void mandelgpu(int disp_width, int disp_height, int *array, int max_iter) {
 
     double 	scale_real, scale_imag;
     double 	x, y, u, v, u2, v2;

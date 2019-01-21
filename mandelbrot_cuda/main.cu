@@ -12,7 +12,8 @@ main(int argc, char *argv[]) {
 
     int   width, height;
     int	  max_iter;
-    int   *image, *h_image, *d_image;
+    //int   *image, 
+    int *h_image, *d_image;
 
     width    = 2601;
     height   = 2601;
@@ -23,7 +24,7 @@ main(int argc, char *argv[]) {
     
     
     
-    
+    /*
     double start = omp_get_wtime();
     image = (int *)malloc( width * height * sizeof(int));
     #pragma omp parallel
@@ -34,8 +35,8 @@ main(int argc, char *argv[]) {
     writepng("mandelbrot.png", image, width, height);
     double end = omp_get_wtime() - start;
     printf("Wall time cpu: %lf",end);
-
-    start = omp_get_wtime();
+    */
+    double start = omp_get_wtime();
     h_image = (int *)malloc( width * height * sizeof(int));
     cudaMalloc((void**)&d_image,width * height * sizeof(int));
     mandelgpu<<<1,1>>>(width, height, d_image, max_iter);
@@ -45,7 +46,7 @@ main(int argc, char *argv[]) {
     writepng("mandelbrot.png", h_image, width, height);
     cudaFree(d_image);
     free(h_image);
-    end = omp_get_wtime() - start;
+    double end = omp_get_wtime() - start;
     printf("Wall time gpu: %lf",end);
     //
 
