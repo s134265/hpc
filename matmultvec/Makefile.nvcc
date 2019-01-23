@@ -1,0 +1,41 @@
+TARGET	= matmultvec
+OBJS	= main.o datatools.o matadd.o
+OPT	= -g -O3
+ISA	= 
+PARA	= -fopenmp
+
+XOPTS = -Xptxas=-v -arch=sm_70 -lineinfo
+
+ARCH	      = $(shell uname -p)
+
+CC	= gcc
+
+CCC	= nvcc
+CXX	= nvcc
+CXXFLAGS= --compiler-options "$(OPT) $(PARA)" $(XOPTS)
+
+CFLAGS	= $(OPT) $(ISA) $(PARA) $(XOPT)
+
+
+CUDA_PATH ?= /appl/cuda/10.0
+INCLUDES = -I$(CUDA_PATH)/include -I$(CUDA_PATH)/samples/common/inc
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS) 
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LIBS)
+
+
+.SUFFIXES: .cu
+.cu.o:
+	$(CXX) -o $*.o -c $*.cu $(CXXFLAGS) $(SOFLAGS) $(INCLUDES)
+
+clean:
+	rm -f *.o core
+
+
+# dependencies
+#
+main.o  : main.cu datatools.h matadd.h
+mandel.o: matdd.cu
+datatools.o: datatools.cu datatools.h
